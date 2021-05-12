@@ -1,0 +1,115 @@
+# Base packages
+base
+linux
+linux-firmware
+mkinitcpio
+mkinitcpio-archiso
+arch-install-scripts
+nano
+networkmanager
+grub
+efibootmgr
+os-prober
+sudo
+bash-completion
+networkmanager
+
+# req for other booting options
+syslinux
+memtest86+
+edk2-shell
+
+# CPU microcode
+amd-ucode
+intel-ucode
+
+# x server
+xorg-server
+xorg-xinit
+xorg-setxkbmap
+xorg-xinput
+
+# x server gpu drivers
+xf86-video-intel
+xf86-video-amdgpu
+xf86-video-nouveau
+mesa
+lib32-mesa
+
+# display manager
+lightdm
+lightdm-gtk-greeter
+lightdm-gtk-greeter-settings
+
+# audio
+pulseaudio
+pulseaudio-alsa
+alsa-utils
+pavucontrol
+
+# i3
+i3-gaps
+i3status
+i3lock
+python-i3ipc
+dmenu
+
+# appearance
+breeze
+breeze-gtk
+qt5ct
+lxappearance
+capitaine-cursors
+arc-icon-theme
+archlinux-wallpaper
+feh
+picom
+
+# fonts
+noto-fonts
+ttf-fantasque-sans-mono
+
+# terminal programs
+htop
+nethogs
+arandr
+unrar
+zip
+neofetch
+git
+
+# gui programs
+xterm
+volumeicon
+thunar
+tumbler
+ffmpegthumbnailer
+thunar-archive-plugin
+thunar-media-tags-plugin
+xarchiver
+mousepad
+firefox
+scrot
+udiskie
+
+# added functionality
+gvfs
+gvfs-smb
+gvfs-mtp
+xdg-user-dirs
+unclutter
+nano-syntax-highlighting
+ufw
+gufw
+dunst
+polkit
+polkit-gnome
+polkit-qt5
+gnome-keyring
+seahorse
+
+# energy related
+xfce4-power-manager
+tlp
+cpupower
+powertop
