@@ -93,6 +93,7 @@ scrot
 udiskie
 
 # added functionality
+ntfs-3g
 gvfs
 gvfs-smb
 gvfs-mtp
