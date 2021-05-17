@@ -17,7 +17,7 @@ This is result in an .iso to burn/use in a VM.
 - [x] Network
 - [x] LightDM with i3 WM
   - [x] with my configs
-  - [x] and keyboard set to ```pt```
+  - [ ] and keyboard set to ```pt```
 - [ ] CUPS 
 - [ ] Samba 
 - [ ] Bluetooth 
