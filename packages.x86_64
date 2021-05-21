@@ -115,3 +115,9 @@ xfce4-power-manager
 tlp
 cpupower
 powertop
+
+# printing related
+cups
+cups-pdf
+avahi
+nss-mdns
