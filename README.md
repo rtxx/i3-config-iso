@@ -19,6 +19,15 @@ This is result in an .iso to burn/use in a VM.
   - [x] with my configs
   - [ ] and keyboard set to ```pt```
 - [ ] CUPS 
+```
+# https://wiki.archlinux.org/title/CUPS#Network
+# https://wiki.archlinux.org/title/Avahi#Hostname_resolution
+install cups cups-pdf
+install avahi nss.mdns
+    change /etc/nsswitch.config with hosts: ... mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] dns ...
+start avahi.service
+start cups.service
+```
 - [ ] Samba 
 - [ ] Bluetooth 
 - [ ] Diagnostic tools
