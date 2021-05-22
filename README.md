@@ -10,7 +10,7 @@ cd ~/iso
 git clone https://github.com/rtxx/i3-config-iso
 sudo mkarchiso -v -o . i3-config-iso/
 ```
-This is result in an .iso to burn/use in a VM.
+This will result in an .iso to burn/use in a VM.
 
 ### TODO
 - [x] Base installation
