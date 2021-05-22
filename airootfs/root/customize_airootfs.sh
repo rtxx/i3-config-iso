@@ -10,5 +10,8 @@ set -e -u
 # set keyboard to pt
 localectl set-x11-keymap pt
 
+# I manually created the services with ln -s but CUPS is not starting for some reason. while its not working this is the workaround
+systemctl start cups
+
 # set permission to execute on i3 scripts
 chmod +x /etc/skel/.config/i3/scripts/*
