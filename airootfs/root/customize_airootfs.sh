@@ -8,7 +8,7 @@ set -e -u
 # Warning: customize_airootfs.sh is deprecated! Support for it will be removed in a future archiso version.
 
 # set keyboard to pt
-localectl set-x11-keymap pt
+# localectl set-x11-keymap pt
 
 # I manually created the services with ln -s but CUPS is not starting for some reason. while its not working this is the workaround
 systemctl start cups
