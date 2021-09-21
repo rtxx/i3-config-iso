@@ -13,6 +13,7 @@ os-prober
 sudo
 bash-completion
 networkmanager
+man
 
 # req for other booting options
 syslinux
