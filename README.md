@@ -11,7 +11,7 @@ git clone https://github.com/rtxx/i3-config-iso
 sudo mkarchiso -v -o . i3-config-iso/
 ```
 This will result in an .iso to burn/use in a VM.
-Login is ```live : live``` ```
+Login is ```live : live```
 
 ### TODO
 - [x] Base installation
