@@ -95,6 +95,7 @@ mousepad
 firefox
 scrot
 udiskie
+nm-connection-editor
 
 # added functionality
 ntfs-3g
@@ -112,6 +113,7 @@ polkit-gnome
 polkit-qt5
 gnome-keyring
 seahorse
+network-manager-applet
 
 # energy related
 xfce4-power-manager
