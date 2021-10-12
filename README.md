@@ -31,3 +31,12 @@ Login is ```live : live```
   - [ ] RAM related 
   - [x] Disk related
     - *gsmartcontrol*
+
+### Tips
+*from arch wiki*
+#### Adjusting the size of root partition on the fly
+To adjust the size of the root partition on the live Archlinux system, hit the TAB key to edit the kernel parameters. Append ```cow_spacesize=2G``` at the end to get 2G size for the root partition. Press Enter to continue booting into the live system.
+You can also adjust the root partition size on the fly by running this command:
+```
+sudo mount -o remount,size=2G /run/archiso/cowspace
+```
