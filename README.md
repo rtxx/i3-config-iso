@@ -12,6 +12,7 @@ This will result in an .iso to burn/use in a VM.
 Use ```mount -o remount,size=8G,noatime /tmp``` if /tmp is to small, or use another dir.
 
 Resulting .iso will be at ~/work. Use ```sudo rm -rf ~/work``` to remove it.
+
 Login is ```live : live```
 
 ### TODO
