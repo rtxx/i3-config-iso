@@ -56,6 +56,8 @@ i3status
 i3lock
 python-i3ipc
 dmenu
+jgmenu
+gmrun
 
 # appearance
 breeze
@@ -83,7 +85,8 @@ neofetch
 git
 
 # gui programs
-xterm
+#xterm
+rxvt-unicode
 volumeicon
 thunar
 tumbler
@@ -126,3 +129,10 @@ cups
 cups-pdf
 avahi
 nss-mdns
+
+# diagnostic tools
+gsmartcontrol
+lm_sensors
+stress
+hardinfo
+

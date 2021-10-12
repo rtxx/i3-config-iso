@@ -14,4 +14,10 @@ set -e -u
 systemctl start cups
 
 # set permission to execute on i3 scripts
-chmod +x /etc/skel/.config/i3/scripts/*
+#chmod +x /etc/skel/.config/i3/config.d/scripts/*
+
+# set permission to execute on i3 remake script
+#chmod +x /etc/skel/.config/i3/makeconfig
+
+# set permission to execute on i3status remake script
+#chmod +x /etc/skel/.config/i3status/makeconfig

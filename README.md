@@ -8,7 +8,7 @@ Using ~/iso as an example:
 ```
 cd ~/iso
 git clone https://github.com/rtxx/i3-config-iso
-sudo mkarchiso -v -o . i3-config-iso/
+sudo mkarchiso -v -w /archiso-tmp i3-config-iso/
 ```
 This will result in an .iso to burn/use in a VM.
 Login is ```live : live```
@@ -22,7 +22,10 @@ Login is ```live : live```
 - [x] CUPS *needs restart to work*
 - [ ] Samba 
 - [ ] Bluetooth 
-- [ ] Diagnostic tools
-  - [ ] CPU related
+- [x] Diagnostic tools
+  - *hardinfo*
+  - [x] CPU related
+    - *stress*
   - [ ] RAM related 
-  - [ ] Disk related
+  - [x] Disk related
+    - *gsmartcontrol*

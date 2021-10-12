@@ -1,13 +1,15 @@
+## Base16is Breeze Dark theme
+## author : rtxx
 general {
         interval = 5
-	    output_format = "i3bar"
-	    colors = true
-	    color_good = "#A3BE8C"
-	    color_degraded = "#EBCB8B"
-	    color_bad = "#BF616A"
-	    
-
+	output_format = "i3bar"
+	colors = true
+	color_good = "#27ae60"
+	color_bad = "#da4453"
+       	color_degraded = "#fdbc4b"
 }
+
+
 memory {
         format = " %used/%total"
 }
@@ -42,6 +44,10 @@ disk / {
     format = "/ %free"
 }
 
+disk /home {
+  format = "~ %free"
+}
+
 cpu_temperature 0 {
     path = "/sys/class/thermal/thermal_zone0/temp"
     format = "%degrees°C"
@@ -65,8 +71,8 @@ order += "load"
 #order += "cpu_temperature 0"
 #order += "cpu_temperature 1"
 order += "memory"
-#order += "disk /home"
 order += "disk /"
+order += "disk /home"
 order += "wireless wlp3s0"
 order += "ethernet enp0s25"
 #order += "volume master"

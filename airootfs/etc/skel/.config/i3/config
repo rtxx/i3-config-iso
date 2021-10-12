@@ -19,19 +19,22 @@ set $chat skypeforlinux
 set $i3bar i3status
 
 # wallpaper path
-set $wallpaper ~/.config/i3/breezeblack.jpg
+set $wallpaper ~/.config/i3/config.d/wallpapers/breezeblack.png
+
 # lock wallpaper path
-set $lockpaper /usr/share/backgrounds/archlinux/conference.png
+set $lockpaper ~/.config/i3/config.d/wallpapers/breezeblack.png
 
 # Scripts
 # i3exit is a script from i3 manjaro, adds shutdown menu : https://github.com/Airblader/dotfiles-manjaro/blob/master/.i3/i3exit
-set $i3exit ~/.config/i3/scripts/i3exit
+set $i3exit ~/.config/i3/config.d/scripts/i3exit
 # i3cpu-governor is a script to change cpu governor : https://github.com/rtxx/i3-config
-set $i3cpu-governor ~/.config/i3/scripts/i3cpu-governor
+set $i3cpu-governor ~/.config/i3/config.d/scripts/i3cpu-governor
+# i3services is a script to start/stop some services: https://github.com/rtxx/i3-config
+set $i3services ~/.config/i3/config.d/scripts/i3services
 # Scripts to open new windows in i3wm using alternating layouts (splith/splitv) for each new window. : https://github.com/olemartinorg/i3-alternating-layout
-set $i3-alt-layout ~/.config/i3/scripts/i3_alternating_layout.py
+set $i3-alt-layout ~/.config/i3/config.d/scripts/i3_alternating_layout.py
 # adds blur on wallpaper when a window is visible: https://github.com/rstacruz/feh-blur-wallpaper
-set $feh-blur ~/.config/i3/scripts/feh-blur
+set $feh-blur ~/.config/i3/config.d/scripts/feh-blur
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
@@ -119,12 +122,15 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+Return exec --no-startup-id i3-sensible-terminal -class termfloat-oneliner
 
 # Program launcher
-#breeze colors
-bindsym $mod+d exec --no-startup-id "dmenu_run -nf '#EFF0F1' -nb '#475057' -sb '#EFF0F1' -sf '#475057' -fn 'Fantasque Sans Mono-12' -p '>'"
-bindsym XF86Search exec --no-startup-id "dmenu_run -nf '#EFF0F1' -nb '#475057' -sb '#EFF0F1' -sf '#475057' -fn 'Fantasque Sans Mono-12' -p '>'"
+bindsym $mod+d exec --no-startup-id "dmenu_run -nf '$base04' -nb '$base00' -sb '$base04' -sf '$base00' -fn 'Fantasque Sans Mono-13' -p '>'"
+bindsym XF86Search exec --no-startup-id "dmenu_run -nf '$base04' -nb '$base00' -sb '$base04' -sf '$base00' -fn 'Fantasque Sans Mono-13' -p '>'"
+
 # rofi, if installed uncomment
 #bindsym $mod+d exec --no-startup-id rofi -show
 #bindsym XF86Search exec --no-startup-id rofi -show
+
+#gmrun
+bindsym $mod+Shift+d exec --no-startup-id gmrun
 
 # Most used
 bindsym $mod+F1 exec $file_manager
@@ -153,10 +159,12 @@ exec --no-startup-id unclutter
 exec --no-startup-id xinput --set-prop "Synaptics TM3053-004" "libinput Tapping Enabled" 1
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+# cute dog, dont kill it :(
+# exec --no-startup-id oneko -dog
 
-#exec --no-startup-id jgmenu --at-pointer --hide-on-startup
+exec --no-startup-id jgmenu --at-pointer --hide-on-startup
 
-exec --no-startup-id $i3-alt-layout
+#exec --no-startup-id $i3-alt-layout
 #exec --no-startup-id $feh-blur --blur 4 --darken 0 -d
 
 # Open applications on specific workspaces
@@ -175,7 +183,7 @@ for_window [workspace=$ws22] layout tabbed
 #bindsym F1 [instance="xterm"] scratchpad show
 
 # Open specific applications in floating mode
-for_window [class="termfloat"] floating enable, resize set 800 500, move absolute position center
+for_window [class="termfloat"] floating enable, resize set 1000 500, move absolute position center
 for_window [class="termfloat-oneliner"] floating enable, resize set 1024 96, move absolute position center
 for_window [title="alsamixer"] floating enable, border pixel 1
 for_window [class="Clipgrab"] floating enable
@@ -250,6 +258,24 @@ mode "$mode_cpu" {
   bindsym 6 exec --no-startup-id pkexec $i3cpu-governor schedutil && :, mode "default"
 
   # exit cpu mode: "Enter" or "Escape"
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+
+### services menu
+# checks, starts and stops some common services
+bindsym $mod+Ctrl+s mode "$mode_services"
+set $mode_services (1)check (2)start-printing  (3)start-bluetooth (4)start-energy (5)stop-printing  (6)stop-bluetooth (7)stop-energy 
+mode "$mode_services" {
+  bindsym 1 exec --no-startup-id $i3services check && :, mode "default"
+  bindsym 2 exec --no-startup-id $i3services start-printing && :, mode "default"
+  bindsym 3 exec --no-startup-id $i3services start-bluetooth && :, mode "default"
+  bindsym 4 exec --no-startup-id $i3services start-energy && :, mode "default"
+  bindsym 5 exec --no-startup-id $i3services stop-printing && :, mode "default"
+  bindsym 6 exec --no-startup-id $i3services stop-bluetooth && :, mode "default"
+  bindsym 7 exec --no-startup-id $i3services stop-energy && :, mode "default"
+
+  # exit services mode: "Enter" or "Escape"
   bindsym Return mode "default"
   bindsym Escape mode "default"
 }
@@ -399,43 +425,13 @@ mode "resize" {
   bindsym Escape mode "default"
 }
 
-### Theme / Colors ###
-# Breeze Theme
-# class                 border  bground text    indicator child_border
-client.focused          #475057 #475057 #EFF0F1 #475057   #285577
-client.focused_inactive #475057 #475057 #BDC3C7 #475057   #5F676A
-client.unfocused        #232629 #232629 #BDC3C7 #232629   #222222
-client.urgent           #DA4453 #DA4453 #FFFFFF #DA4453   #DA4453
-client.placeholder      #232629 #232629 #FFFFFF #232629   #232629
-
-client.background       #EFF0F1
-
-# Start i3bar to display a workspace bar (plus the system information i3status finds out, if available)
-bindsym $mod+F11 bar mode invisible
-bindsym $mod+F12 bar mode dock
-bar {
-  bindsym button3 exec --no-startup-id jgmenu_run
-  status_command $i3bar
-  position top
-  colors {
-    background #475057
-    statusline #EFF0F1
-    separator  #BDC3C7
-
-    focused_workspace  #3DAEE9 #475057 #FFFFFF
-    active_workspace   #475057 #475057 #EFF0F1
-    inactive_workspace #475057 #475057 #7F8C8D
-    urgent_workspace   #2F343A #DA4453 #FFFFFF
-    binding_mode       #2F343A #DA4453 #FFFFFF
-  }
-}
 
 #############################
 ### settings for i3-gaps: ###
 #############################
 
 # Set inner/outer gaps
-gaps inner 0
+gaps inner 2
 gaps outer 8
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
@@ -487,3 +483,57 @@ mode "$mode_gaps_outer" {
   bindsym Return mode "default"
   bindsym Escape mode "default"
 }
+
+### Theme / Colors ###
+
+# Basic color configuration using the Base16 variables for windows and borders.
+# Property Name         Border  BG      Text    Indicator Child Border
+client.focused          $base05 $base0D $base00 $base0D $base0C
+client.focused_inactive $base01 $base01 $base05 $base03 $base01
+client.unfocused        $base01 $base00 $base05 $base01 $base01
+client.urgent           $base08 $base08 $base00 $base08 $base08
+client.placeholder      $base00 $base00 $base05 $base00 $base00
+client.background       $base07
+
+# Start i3bar to display a workspace bar (plus the system information i3status finds out, if available)
+bindsym $mod+F11 bar mode invisible
+bindsym $mod+F12 bar mode dock
+bar {
+  bindsym button3 exec --no-startup-id jgmenu_run
+  status_command $i3bar
+  position top
+    colors {
+        background $base00
+        separator  $base01
+        statusline $base04
+
+        # State             Border  BG      Text
+        focused_workspace   $base05 $base0D $base00
+        active_workspace    $base05 $base03 $base00
+        inactive_workspace  $base03 $base01 $base05
+        urgent_workspace    $base08 $base08 $base00
+        binding_mode        $base00 $base0A $base00
+    }
+}
+
+## Base16ish Breeze dark
+# Author: rtxx
+#
+# You can use these variables anywhere in the i3 configuration file.
+
+set $base00 #31363b
+set $base01 #4d4d4d
+set $base02 #3daee9
+set $base03 #7f8c8d
+set $base04 #eff0f1
+set $base05 #fcfcfc
+set $base06 #fcfcfc
+set $base07 #fcfcfc
+set $base08 #da4453
+set $base09 #3daee9
+set $base0A #fdbc4b
+set $base0B #27ae60
+set $base0C #3daee9
+set $base0D #3daee9
+set $base0E #f47750
+set $base0F #3daee9
