@@ -73,6 +73,7 @@ picom
 
 # fonts
 noto-fonts
+noto-fonts-emoji
 ttf-fantasque-sans-mono
 
 # terminal programs
