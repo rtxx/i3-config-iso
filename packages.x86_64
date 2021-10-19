@@ -87,7 +87,7 @@ neofetch
 git
 
 # gui programs
-#xterm
+xterm
 rxvt-unicode
 volumeicon
 thunar
@@ -119,6 +119,7 @@ polkit-qt5
 gnome-keyring
 seahorse
 network-manager-applet
+gpaste
 
 # energy related
 xfce4-power-manager
