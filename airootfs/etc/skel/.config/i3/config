@@ -75,7 +75,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # test
-bindsym $mod+Shift+a exec "kill $(pgrep -au $USER "bash" | grep "bash /usr/bin/clipmenud" | awk '{print$1}')"
+#bindsym $mod+Shift+a exec "kill $(pgrep -au $USER "bash" | grep "bash /usr/bin/clipmenud" | awk '{print$1}')"
 
 #### Sound Section ####
 # Opens alsamixer
@@ -267,7 +267,6 @@ bindsym $mod+Shift+u exec --no-startup-id \
 bindsym $mod+Ctrl+space exec --no-startup-id sh ~/.config/i3/config.d/scripts/emojipick
 # clipboard manager
 #bindsym $mod+c exec --no-startup-id "clipmenu -nf '$base05' -nb '$base00' -sb '$base05' -sf '$base00' -fn 'Fantasque Sans Mono-13' -p '>'"
-
 bindsym $mod+c exec --no-startup-id gpaste-client ui
 
 # Network related

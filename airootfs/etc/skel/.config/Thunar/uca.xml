@@ -2,10 +2,10 @@
 <actions>
 <action>
 	<icon>utilities-terminal</icon>
-	<name>Open Xterm Terminal Here</name>
+	<name>Open Terminal Here</name>
 	<unique-id>1615568314363416-1</unique-id>
-	<command>xterm -e &quot;cd %f &amp;&amp; /bin/bash&quot;</command>
-	<description>Open xterm on the current dir</description>
+	<command>xterm -e &apos;cd %f &amp;&amp; /bin/bash&apos;</command>
+	<description>Example for a custom action</description>
 	<patterns>*</patterns>
 	<startup-notify/>
 	<directories/>
