@@ -120,6 +120,7 @@ gnome-keyring
 seahorse
 network-manager-applet
 gpaste
+jq
 
 # energy related
 xfce4-power-manager
