@@ -55,6 +55,7 @@ i3-gaps
 i3status
 py3status
 i3lock
+xss-lock
 python-i3ipc
 dmenu
 jgmenu
