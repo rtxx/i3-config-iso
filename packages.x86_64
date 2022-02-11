@@ -52,7 +52,6 @@ pavucontrol
 
 # i3
 i3-gaps
-i3status
 py3status
 i3lock
 xss-lock
@@ -91,7 +90,7 @@ git
 
 # gui programs
 xterm
-rxvt-unicode
+kitty
 volumeicon
 thunar
 tumbler

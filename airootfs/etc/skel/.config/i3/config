@@ -17,7 +17,7 @@ set $browser firefox
 set $i3bar py3status
 
 # wallpaper path
-set $wallpaper "/home/ruitx/.config/i3/config.d/scripts/i3theme/themes/adapta-nokto/tealized.jpg"
+set $wallpaper "/home/$USER/.config/i3/config.d/scripts/i3theme/themes/materia-light/willian-justen-de-vasconcellos-T_Qe4QlMIvQ-unsplash.jpg"
 
 # lock wallpaper path
 set $lockpaper /home/$USER/.config/i3/config.d/wallpapers/lockscreen.png
@@ -57,7 +57,8 @@ bindsym $mod+n border normal
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font xft:Noto Sans 8
+#font xft:Noto Sans 8
+font xft:Fantasque Sans Mono 10 
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
@@ -77,7 +78,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 #### Sound Section ####
 # Opens alsamixer
-bindsym $mod+Shift+m exec i3-sensible-terminal -class termfloat -e alsamixer
+bindsym $mod+Shift+m exec i3-sensible-terminal --class termfloat -e alsamixer
 
 # Change volume
 bindsym XF86AudioRaiseVolume exec --no-startup-id \
@@ -243,7 +244,7 @@ bindsym $mod+Shift+n exec --no-startup-id \
 # Start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 # Start a terminal on center and floating with minimal size
-bindsym $mod+Shift+Return exec --no-startup-id i3-sensible-terminal -name termfloat-oneliner
+bindsym $mod+Shift+Return exec --no-startup-id i3-sensible-terminal --name termfloat-oneliner
 
 # Program launcher
 bindsym $mod+d exec --no-startup-id "dmenu_run -nf '$base05' -nb '$base00' -sb '$base05' -sf '$base00' -fn 'Fantasque Sans Mono-13' -p '>'"
@@ -264,7 +265,7 @@ bindsym $mod+F1 exec $file_manager
 bindsym $mod+F2 exec $browser
 
 # System related
-bindsym $mod+Insert exec --no-startup-id i3-sensible-terminal -name termfloat -hold -e neofetch
+bindsym $mod+Insert exec --no-startup-id i3-sensible-terminal --name termfloat --hold -e neofetch
 bindsym $mod+Delete exec i3-sensible-terminal -e htop
 bindsym $mod+F5 exec i3-sensible-terminal -e pkexec dmesg -wH
 
@@ -282,7 +283,7 @@ bindsym $mod+c exec --no-startup-id gpaste-client ui
 
 # Network related
 bindsym $mod+F9 exec "$i3sounds question & i3-sensible-terminal -e pkexec nethogs"
-bindsym $mod+Shift+w exec --no-startup-id i3-sensible-terminal -name termfloat -e nmtui
+bindsym $mod+Shift+w exec --no-startup-id i3-sensible-terminal --name termfloat -e nmtui
 
 # Autostart applications
 exec --no-startup-id xrdb ~/.Xresources
@@ -306,7 +307,10 @@ exec --no-startup-id nm-applet
 exec --no-startup-id jgmenu --at-pointer --hide-on-startup
 #exec --no-startup-id $feh-blur --blur 4 --darken 0 -d
 exec --no-startup-id opensnitch-ui
-exec --no-startup-id python /home/ruitx/Coding/sunset/sunset.py
+#exec --no-startup-id python /home/ruitx/Coding/sunset/sunset.py
+
+# no window decorations
+for_window [class=".*"] border pixel 0
 
 # Open applications on specific workspaces
 assign [class="Skype"] $ws20
@@ -690,24 +694,24 @@ bar {
     }
 }
 
-## Base16 Ashes
-# Author: Jannik Siebert (https://github.com/janniks)
+## Base16 Materia
+# Author: Defman21
 #
 # You can use these variables anywhere in the i3 configuration file.
 
-set $base00 #1C2023
-set $base01 #393F45
-set $base02 #565E65
-set $base03 #747C84
-set $base04 #ADB3BA
-set $base05 #C7CCD1
-set $base06 #DFE2E5
-set $base07 #F3F4F5
-set $base08 #C7AE95
-set $base09 #C7C795
-set $base0A #AEC795
-set $base0B #95C7AE
-set $base0C #95AEC7
-set $base0D #AE95C7
-set $base0E #C795AE
-set $base0F #C79595
+set $base00 #263238
+set $base01 #2C393F
+set $base02 #37474F
+set $base03 #707880
+set $base04 #C9CCD3
+set $base05 #CDD3DE
+set $base06 #D5DBE5
+set $base07 #FFFFFF
+set $base08 #EC5F67
+set $base09 #EA9560
+set $base0A #FFCC00
+set $base0B #8BD649
+set $base0C #80CBC4
+set $base0D #89DDFF
+set $base0E #82AAFF
+set $base0F #EC5F67
