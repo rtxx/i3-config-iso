@@ -90,7 +90,7 @@ neofetch
 git
 
 # gui programs
-xterm
+#xterm
 kitty
 volumeicon
 thunar
