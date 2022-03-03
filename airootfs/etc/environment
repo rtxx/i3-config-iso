@@ -3,5 +3,5 @@
 #
 # Syntax: simple "KEY=VAL" pairs on separate lines
 #
-TERMINAL=xterm
+TERMINAL=kitty
 QT_QPA_PLATFORMTHEME=qt5ct
