@@ -2,7 +2,7 @@
   "sunsetLocation" : "$HOME/.config/i3/config.d/scripts/sunset/sunset",
   "lightTheme": "materia-light",
   "lightThemeSetting" : "-gqwx",
-  "darkTheme" : "nord",
+  "darkTheme" : "materia-dark",
   "darkThemeSetting" : "-gqwx"
 }
 
