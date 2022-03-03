@@ -2,10 +2,10 @@
 <actions>
 <action>
 	<icon>utilities-terminal</icon>
-	<name>Open Terminal Here</name>
+	<name>Open kitty here</name>
 	<unique-id>1615568314363416-1</unique-id>
-	<command>xterm -e &apos;cd %f &amp;&amp; /bin/bash&apos;</command>
-	<description>Example for a custom action</description>
+	<command>kitty</command>
+	<description>Open kitty on current directory</description>
 	<patterns>*</patterns>
 	<startup-notify/>
 	<directories/>

@@ -64,11 +64,12 @@ gmrun
 # appearance
 breeze
 breeze-gtk
-qt5ct
+materia-gtk-theme
+materia-kde
+#qt5ct
 xsettingsd
 lxappearance
 capitaine-cursors
-arc-icon-theme
 papirus-icon-theme
 archlinux-wallpaper
 feh
@@ -88,6 +89,7 @@ zip
 unzip
 neofetch
 git
+vim
 
 # gui programs
 #xterm
@@ -143,3 +145,7 @@ lm_sensors
 stress
 hwinfo
 
+# archi3 custom packages
+qt5ct-kde
+python-schedule
+python-pystray

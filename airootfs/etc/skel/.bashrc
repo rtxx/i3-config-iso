@@ -12,6 +12,8 @@ PS1='[\t \u@\h \w]\n$ '
 # https://askubuntu.com/questions/22037/aliases-not-available-when-using-sudo/22043#22043
 alias sudo='sudo '
 alias ls='ls --color=auto'
+# kitty ssh workaround
+alias ssh="kitty +kitten ssh"
 
 #wholesome computing
 # silly quotes from a silly cow
@@ -43,13 +45,13 @@ alias pls-remove='sudo pacman -R'
 alias pls-clean-my-system='sudo pacman -Rns $(pacman -Qdtq)'
 
 # edit common files
-alias pls-edit-fstab='sudo nano /etc/fstab'
-alias pls-edit-pacmanconf='sudo nano /etc/pacman.conf'
-alias pls-edit-env='sudo nano /etc/environment'
+alias pls-edit-fstab='sudo vim /etc/fstab'
+alias pls-edit-pacmanconf='sudo vim /etc/pacman.conf'
+alias pls-edit-env='sudo vim /etc/environment'
 
 # i3
 # edit config file
-alias i3-edit-config='nano ~/.config/i3/config.d/main.conf'
+alias i3-edit-config='vim ~/.config/i3/config.d/main.conf'
 alias i3-edit-config-gui='xdg-open ~/.config/i3/config.d/main.conf & disown'
 # remake config and reload
 alias i3-remake-config='bash ~/.config/i3/makeconfig; i3-msg restart'
@@ -60,23 +62,27 @@ alias i3-wallpaper-set='feh --bg-scale'
 
 # i3status
 # edit config file
-alias i3status-edit-config='nano ~/.config/i3status/config.d/main.conf'
+alias i3status-edit-config='vim ~/.config/i3status/config.d/main.conf'
 alias i3status-edit-config-gui='xdg-open ~/.config/i3status/config.d/main.conf & disown'
 # remake config and reload
 alias i3status-remake-config='bash ~/.config/i3status/makeconfig; i3-msg restart'
 
-#i3 theme changer
-alias i3theme='bash ~/.config/i3/config.d/scripts/i3theme/i3theme'
+#theme changer
+alias sunset='bash ~/.config/i3/config.d/scripts/sunset/sunset'
 
 # simple script with helpful pacman commands
 alias help-pacman='bash ~/.config/i3/config.d/scripts/help-pacman'
 
-
 # simple aur helper
-alias packy='bash ~/.config/i3/config.d/scripts/packy'
+alias packy='bash ~/.config/i3/config.d/scripts/packy/packy'
 
 # check news from arch
-alias archnews='bash ~/Coding/archnews/archnews'
+#alias archnews='bash ~/Coding/archnews/archnews'
 
 # download playlist to mp3 from youtube
-alias youtube-dl-playlist="youtube-dl -i --extract-audio --audio-format mp3 -o '%(title)s.%(ext)s'"
+#alias youtube-dl-playlist="./home/live/Applications/yt-dlp -i --extract-audio --audio-format mp3 -o '%(title)s.%(ext)s'"
+
+
+# BEGIN_KITTY_SHELL_INTEGRATION
+if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
+# END_KITTY_SHELL_INTEGRATION

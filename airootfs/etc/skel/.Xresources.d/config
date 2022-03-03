@@ -24,7 +24,7 @@ URxvt.keysym.Control-Right:  \033[1;5C
 ! URxvt will now copy/paste with Alt-Control-c/v
 ! to copy selected text automatically use
 ! URxvt.perl-ext-common: ... , selection-to-clipboard, ...
-URxvt.perl-ext-common: clipboard
+URxvt.perl-ext-common: clipboard,config-reload
 URxvt.keysym.Alt-Control-c: perl:clipboard:copy
 URxvt.keysym.Alt-Control-v: perl:clipboard:paste
 

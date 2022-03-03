@@ -10,7 +10,7 @@ emojiget='emojiget.py'
 
 # Name-Size
 font_family='"Noto Color Emoji"'
-font_size="18"
+font_size="13"
 
 # Path to personal emojis file to display them at top of the dmenu list.
 favorites=~/.myemojis
@@ -25,6 +25,8 @@ enable_favorites=1
 
 base00=#31363b
 base04=#eff0f1
+#base00=#263238
+#base04=#C9CCD3
 
 export SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
 export PATH=.:$SCRIPT_DIR:$PATH
