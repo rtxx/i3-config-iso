@@ -90,6 +90,8 @@ unzip
 neofetch
 git
 vim
+# for emojipick script
+xclip
 
 # gui programs
 #xterm
