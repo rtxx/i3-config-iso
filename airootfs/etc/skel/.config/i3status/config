@@ -55,8 +55,8 @@ whatismyip {
 }
 
 keyboard_layout {
-  format="{layout}"
-  layouts = ['pt','us','gb']
+  format="⌨ {layout}"
+  layouts = ['pt','us']
 }
 
 order += "window"
