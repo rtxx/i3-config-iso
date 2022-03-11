@@ -15,6 +15,7 @@ sudo
 bash-completion
 networkmanager
 man
+pacman-contrib
 
 # req for other booting options
 syslinux
@@ -152,3 +153,4 @@ hwinfo
 qt5ct-kde
 python-schedule
 python-pystray
+yay-bin
