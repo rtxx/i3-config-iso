@@ -96,7 +96,7 @@ vim
 xclip
 
 # gui programs
-#xterm
+xterm
 kitty
 volumeicon
 thunar
